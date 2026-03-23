@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" class="lenis">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Puresol — World's first finest & purest alkaline salt. Hand-harvested from India's Sambhar Lake. 9+ pH, 54+ essential minerals, zero microplastics.">
+  <title>Puresol — Alkaline Gold</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://player.vimeo.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!--
+    IMPORTANT: Scripts loaded synchronously (no defer) so they are
+    available the moment main.js executes at the bottom of <body>.
+  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💎</text></svg>">
+</head>
+
+<body>
+
+  <!-- ============================================================
+       AMBIENT ORBS
+       Three large, highly-blurred radial gradient circles.
+       position: fixed  |  z-index: -2  (behind absolutely everything)
+       ============================================================ -->
+  <div class="ambient-orbs" aria-hidden="true">
+    <div class="ambient-orb ambient-orb--1"></div>
+    <div class="ambient-orb ambient-orb--2"></div>
+    <div class="ambient-orb ambient-orb--3"></div>
+  </div>
+
+  <!-- ============================================================
+       PAGE WATERMARK
+       Vertical looping "PURESOL" text.
+       position: fixed  |  z-index: -1  |  opacity: 1% exactly
+       20 spans so translateY(-50%) loops perfectly seamlessly.
+       ============================================================ -->
+  <div class="page-watermark" aria-hidden="true">
+    <div class="page-watermark__track">
+      <span>PURESOL</span><span>PURESOL</span><span>PURESOL</span><span>PURESOL</span>
+      <span>PURESOL</span><span>PURESOL</span><span>PURESOL</span><span>PURESOL</span>
+      <span>PURESOL</span><span>PURESOL</span><span>PURESOL</span><span>PURESOL</span>
+      <span>PURESOL</span><span>PURESOL</span><span>PURESOL</span><span>PURESOL</span>
+      <span>PURESOL</span><span>PURESOL</span><span>PURESOL</span><span>PURESOL</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PRELOADER
+       z-index: 9999 — slides up and hides after animation.
+       ============================================================ -->
+  <div class="preloader" aria-hidden="true">
+    <span class="preloader__brand">Puresol</span>
+    <div class="preloader__line"></div>
+    <span class="preloader__tagline">Alkaline Gold</span>
+  </div>
+
+  <!-- ============================================================
+       ORIGINAL FLOATING PARALLAX BOTTLE
+       Right-edge bottle, fades out when science section appears.
+       Replace src with your actual background-removed product PNG.
+       ============================================================ -->
+  <div class="floating-bottle" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1518110925495-5fe2c8dccd32?w=300&q=80"
+         alt="" id="parallaxBottle" loading="lazy">
+  </div>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo">Puresol</a>
+      <div class="nav__hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+      <ul class="nav__links">
+        <li><a href="#products" class="nav__link">Products</a></li>
+        <li><a href="#science"  class="nav__link">The Science</a></li>
+        <li><a href="#process"  class="nav__link">Our Process</a></li>
+        <li><a href="#contact"  class="nav__link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       Starts opacity:0 — JS fades it in after preloader exits.
+       CSS @keyframes fallback ensures it's never permanently hidden.
+       ============================================================ -->
+  <main class="main-content">
+
+    <!-- HERO ---------------------------------------------------- -->
+    <section class="hero" id="hero">
+      <div class="hero__video-wrap">
+        <iframe
+          src="https://player.vimeo.com/video/1176345398?background=1&autoplay=1&loop=1&byline=0&title=0"
+          style="position:absolute;top:50%;left:50%;width:177.78vh;height:100vh;min-width:100vw;min-height:56.25vw;transform:translate(-50%,-50%);border:none;pointer-events:none;"
+          allow="autoplay; fullscreen" allowfullscreen
+          loading="lazy" title="Puresol brand film">
+        </iframe>
+      </div>
+      <div class="hero__overlay"></div>
+      <div class="hero__grain"></div>
+      <div class="hero__content">
+        <p class="hero__eyebrow">Estd 2025 &nbsp;·&nbsp; From Sambhar Lake, Rajasthan</p>
+        <h1 class="hero__title">
+          <span>Alkaline</span>
+          <span><span class="title-accent">Gold</span></span>
+        </h1>
+        <div class="hero__divider"></div>
+        <p class="hero__subtitle">
+          The first pinch starts here — hand-harvested from India's pristine brine beds
+          where nature perfects every crystal.
+        </p>
+      </div>
+      <div class="hero__scroll">
+        <span class="hero__scroll-text">Discover</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- INTRO / PHILOSOPHY -------------------------------------- -->
+    <section class="section intro" id="intro">
+      <img class="bg-asset bg-asset--flamingo1"
+           src="assets/flamingo1.png" alt="" aria-hidden="true" loading="lazy">
+      <div class="container intro__inner">
+        <p class="text-label intro__label">The Puresol Promise</p>
+        <h2 class="heading-section intro__heading">
+          World's First Finest &<br>Purest Alkaline Salt
+        </h2>
+        <p class="intro__text">
+          From pristine brine beds of India's Sambhar Lake, where the rare pink
+          microalgae Dunaliella salina thrives, Puresol crystals are born. Shaped
+          by sun and wind, hand-harvested with care, each grain embodies patience,
+          purity and the true essence of nature — delivered to your table in a
+          single, defining pinch.
+        </p>
+        <div class="intro__divider"></div>
+      </div>
+    </section>
+
+    <!-- BENEFITS MARQUEE ---------------------------------------- -->
+    <div class="benefits-strip" aria-label="Key benefits">
+      <div class="benefits-strip__track">
+        <div class="benefits-strip__item">
+          <div class="benefits-strip__icon">✦</div>
+          <span class="benefits-strip__text">9+ pH Naturally Alkaline</span>
+        </div>
+        <span class="benefits-strip__separator">◆</span>
+        <div class="benefits-strip__item">
+          <div class="benefits-strip__icon">✦</div>
+          <span class="benefits-strip__text">54+ Essential Minerals</span>
+        </div>
+        <span class="benefits-strip__separator">◆</span>
+        <div class="benefits-strip__item">
+          <div class="benefits-strip__icon">✦</div>
+          <span class="benefits-strip__text">Zero Microplastics</span>
+        </div>
+        <span class="benefits-strip__separator">◆</span>
+        <div class="benefits-strip__item">
+          <div class="benefits-strip__icon">✦</div>
+          <span class="benefits-strip__text">No Additives · No Bleaching</span>
+        </div>
+        <span class="benefits-strip__separator">◆</span>
+        <div class="benefits-strip__item">
+          <div class="benefits-strip__icon">✦</div>
+          <span class="benefits-strip__text">Multi Vitamins B1 · B2 · B3 · B6 · B9 · B12 · C</span>
+        </div>
+        <span class="benefits-strip__separator">◆</span>
+        <div class="benefits-strip__item">
+          <div class="benefits-strip__icon">✦</div>
+          <span class="benefits-strip__text">Sun-Dried 9–12 Months</span>
+        </div>
+        <span class="benefits-strip__separator">◆</span>
+        <div class="benefits-strip__item">
+          <div class="benefits-strip__icon">✦</div>
+          <span class="benefits-strip__text">Sustainably Harvested</span>
+        </div>
+        <span class="benefits-strip__separator">◆</span>
+        <div class="benefits-strip__item">
+          <div class="benefits-strip__icon">✦</div>
+          <span class="benefits-strip__text">Eco-Friendly Packaging</span>
+        </div>
+        <span class="benefits-strip__separator">◆</span>
+      </div>
+    </div>
+
+    <!-- PRODUCTS ------------------------------------------------ -->
+    <section class="section products" id="products">
+      <img class="bg-asset bg-asset--flamingo2"
+           src="assets/flamingo2.png" alt="" aria-hidden="true" loading="lazy">
+      <div class="container">
+        <div class="products__header">
+          <p class="text-label reveal-up">Our Collection</p>
+          <h2 class="heading-section reveal-up" style="margin-top:1rem;">
+            Two Salts. One Ancient Lake.
+          </h2>
+        </div>
+        <div class="products__grid">
+
+          <div class="product-card">
+            <span class="product-card__badge">Flagship</span>
+            <div class="product-card__image-wrap">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 320' fill='none'%3E%3Crect width='240' height='320' rx='16' fill='%23FFF8F0'/%3E%3Crect x='40' y='20' width='160' height='60' rx='8' fill='%235C1A2A'/%3E%3Ctext x='120' y='58' text-anchor='middle' fill='%23F5B5C8' font-size='14' font-family='serif'%3EPuresol%3C/text%3E%3Ctext x='120' y='130' text-anchor='middle' fill='%235C1A2A' font-size='13' font-family='serif'%3ENatural%3C/text%3E%3Ctext x='120' y='155' text-anchor='middle' fill='%235C1A2A' font-size='13' font-family='serif'%3EAlkaline Salt%3C/text%3E%3Crect x='20' y='220' width='200' height='80' rx='8' fill='url(%23pg)'/%3E%3Cdefs%3E%3ClinearGradient id='pg' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23F5B5C8'/%3E%3Cstop offset='1' stop-color='%23E91E78'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E"
+                   alt="Puresol Natural Alkaline Salt" width="240" height="320">
+            </div>
+            <h3 class="product-card__name">Natural Alkaline Salt</h3>
+            <p class="product-card__tagline">From Sambhar Lake · 9+ pH</p>
+            <div class="product-card__features">
+              <span class="product-card__feature">Microplastic Free</span>
+              <span class="product-card__feature">Anti-Caking Agent Free</span>
+              <span class="product-card__feature">Naturally Iodised</span>
+              <span class="product-card__feature">Vitamin B9</span>
+              <span class="product-card__feature">Bio-Available Iron</span>
+            </div>
+            <a href="#" class="product-card__link">Explore</a>
+          </div>
+
+          <div class="product-card product-card--super7">
+            <span class="product-card__badge" style="background:var(--gold-warm);">Vitamin Enriched</span>
+            <div class="product-card__image-wrap">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 320' fill='none'%3E%3Crect width='240' height='320' rx='16' fill='%23FFF8F0'/%3E%3Crect x='40' y='20' width='160' height='60' rx='8' fill='%235C1A2A'/%3E%3Ctext x='120' y='58' text-anchor='middle' fill='%23F5B5C8' font-size='14' font-family='serif'%3EPuresol%3C/text%3E%3Ctext x='120' y='130' text-anchor='middle' fill='%235C1A2A' font-size='14' font-family='serif'%3ESuper 7 Salt%3C/text%3E%3Crect x='20' y='200' width='200' height='100' rx='8' fill='url(%23gg)'/%3E%3Cdefs%3E%3ClinearGradient id='gg' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23E8D5B8'/%3E%3Cstop offset='0.5' stop-color='%23D4A853'/%3E%3Cstop offset='1' stop-color='%23C4923A'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E"
+                   alt="Puresol Super 7 Salt" width="240" height="320">
+            </div>
+            <h3 class="product-card__name">Super 7 Salt</h3>
+            <p class="product-card__tagline">Naturally Golden · Mineral-Rich</p>
+            <div class="product-card__features">
+              <span class="product-card__feature">Rich in Pro-Vitamin A</span>
+              <span class="product-card__feature">Beta Carotene</span>
+              <span class="product-card__feature">Antioxidant</span>
+              <span class="product-card__feature">Anti-Inflammatory</span>
+              <span class="product-card__feature">Vision Support</span>
+            </div>
+            <a href="#" class="product-card__link">Explore</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SCIENCE / PROCESS --------------------------------------- -->
+    <section class="section science" id="science">
+      <img class="bg-asset bg-asset--harvesting"
+           src="assets/harvesting.png" alt="" aria-hidden="true" loading="lazy">
+      <div class="container science__inner">
+        <div class="science__header">
+          <p class="text-label reveal-up">The Ancient Process</p>
+          <h2 class="heading-section reveal-up" style="margin-top:1rem;">
+            Born in the Sacred Desert Plains of Rajasthan
+          </h2>
+          <p class="text-body reveal-up" style="margin-top:1rem;">
+            Sambhar Lake Salt has been harvested in India for over a thousand years.
+            Naturally alkaline and sun-cured through the ancient process of Suryatapa.
+          </p>
+        </div>
+        <div class="process-timeline" id="process">
+
+          <div class="process-step">
+            <div class="process-step__content">
+              <h4 class="process-step__title">Capillary Rise</h4>
+              <p class="process-step__text">Salt pans form as groundwater salts rise by capillary action; when water evaporates, minerals remain, making the soil alkaline.</p>
+            </div>
+            <div class="process-step__marker">1</div>
+            <div class="process-step__spacer"></div>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step__spacer"></div>
+            <div class="process-step__marker">2</div>
+            <div class="process-step__content">
+              <h4 class="process-step__title">Brine Channeling</h4>
+              <p class="process-step__text">Brine from Sambhar Lake is added to pans, followed by subsoil brine, concentrating the mineral-rich waters under the Rajasthani sun.</p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step__content">
+              <h4 class="process-step__title">Dunaliella salina</h4>
+              <p class="process-step__text">The rare pink microalgae Dunaliella salina thrives in these brine beds, giving the salt its distinctive pink hue and adding iodine naturally.</p>
+            </div>
+            <div class="process-step__marker">3</div>
+            <div class="process-step__spacer"></div>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step__spacer"></div>
+            <div class="process-step__marker">4</div>
+            <div class="process-step__content">
+              <h4 class="process-step__title">9–12 Month Sun-Drying</h4>
+              <p class="process-step__text">Salt crystals are sun-dried for 9 to 12 months, locking in minerals. The warmth of the Indian sun and the harmony of Ayurveda shape each grain.</p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step__content">
+              <h4 class="process-step__title">Pure Harvest</h4>
+              <p class="process-step__text">Crystals are hand-collected from Sambhar Sarovar and packed in their purest, most natural form — no refining, no bleaching, no additives.</p>
+            </div>
+            <div class="process-step__marker">5</div>
+            <div class="process-step__spacer"></div>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step__spacer"></div>
+            <div class="process-step__marker">6</div>
+            <div class="process-step__content">
+              <h4 class="process-step__title">Eco-Friendly Packaging</h4>
+              <p class="process-step__text">Salt is cleaned and packed in recyclable, eco-friendly packaging — this traditional lavanam brings mineral-rich purity and ancestral wellness to everyday meals.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARISON TABLE ---------------------------------------- -->
+    <section class="section comparison" id="comparison">
+      <div class="container">
+        <div class="comparison__header">
+          <p class="text-label reveal-up">The Difference</p>
+          <h2 class="heading-section reveal-up" style="margin-top:1rem;">
+            What Makes Puresol Better
+          </h2>
+        </div>
+        <div class="comparison__table-wrap reveal-up">
+          <table class="comparison__table">
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Refined Table Salt</th>
+                <th>Himalayan Pink Salt</th>
+                <th>Puresol</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>pH</td><td>7</td><td>7–7.5</td><td>&gt;9</td></tr>
+              <tr><td>Alkalinity</td><td>Neutral</td><td>Slightly Alkaline</td><td>Naturally High Alkalinity</td></tr>
+              <tr><td>Trace Minerals</td><td>Low</td><td>High</td><td>High (54+)</td></tr>
+              <tr><td>Processing</td><td>Industrial</td><td>Mined</td><td>Naturally Sundried</td></tr>
+              <tr><td>Microplastics</td><td>High</td><td>Moderate</td><td>None</td></tr>
+              <tr><td>Environmental Impact</td><td>High</td><td>Moderate</td><td>Sustainable</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -------------------------------------------------- -->
+    <footer class="footer" id="contact">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__brand-col">
+            <h3 class="footer__brand-name">Puresol</h3>
+            <p class="footer__brand-desc">
+              Hand-harvested from India's Sambhar Lake. Shaped by sun and wind.
+              54+ essential minerals, zero microplastics. The first pinch starts here.
+            </p>
+          </div>
+          <div>
+            <h4 class="footer__col-title">Products</h4>
+            <a href="#" class="footer__link">Natural Alkaline Salt</a>
+            <a href="#" class="footer__link">Super 7 Salt</a>
+            <a href="#" class="footer__link">Bulk / Industrial</a>
+          </div>
+          <div>
+            <h4 class="footer__col-title">Company</h4>
+            <a href="#" class="footer__link">Our Story</a>
+            <a href="#" class="footer__link">The Science</a>
+            <a href="#" class="footer__link">Sustainability</a>
+            <a href="#" class="footer__link">Contact</a>
+          </div>
+          <div>
+            <h4 class="footer__col-title">Get in Touch</h4>
+            <a href="mailto:hello@puresol.in" class="footer__link">hello@puresol.in</a>
+            <a href="https://www.puresol.in" class="footer__link" target="_blank" rel="noopener">www.puresol.in</a>
+            <p class="footer__link" style="margin-top:0.5rem;">Agrigore Ventures Pvt. Ltd.</p>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>&copy; 2025 Puresol. All rights reserved.</span>
+          <span><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a></span>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- main.js at bottom of body — all DOM is ready when it runs -->
+  <script src="main.js"></script>
+</body>
+</html>
